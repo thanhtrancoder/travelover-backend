@@ -18,13 +18,23 @@ public class CorsConfig {
 	@Value("${frontend.prod.domain}")
     private String frontendProdDomain;
 	
+	@Value("${frontend.test1}")
+    private String frontendTest1;
+	
+	@Value("${frontend.test2}")
+    private String frontendTest2;
+	
 	@Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         
         // Thêm danh sách các domain vào đây
-        List<String> allowedOrigins = Arrays.asList(frontendDevDomain, frontendProdDomain);
+        List<String> allowedOrigins = Arrays.asList(
+        		frontendDevDomain, 
+        		frontendProdDomain,
+        		frontendTest1,
+        		frontendTest2);
         config.setAllowedOrigins(allowedOrigins);
         
 //        config.addAllowedOrigin(frontendDomain); // Thay đổi địa chỉ frontend của bạn tại đây
