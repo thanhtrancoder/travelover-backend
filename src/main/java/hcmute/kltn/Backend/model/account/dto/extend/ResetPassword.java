@@ -1,0 +1,15 @@
+package hcmute.kltn.Backend.model.account.dto.extend;
+
+import java.time.LocalDateTime;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ResetPassword {
+	private String code;
+	private LocalDateTime createAt;
+}
