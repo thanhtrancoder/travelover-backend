@@ -32,16 +32,16 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         
-        // Thêm danh sách các domain vào đây
-        List<String> allowedOrigins = Arrays.asList(
-        		frontendAll,
-        		frontendDevDomain, 
-        		frontendProdDomain,
-        		frontendTest1,
-        		frontendTest2);
-        config.setAllowedOrigins(allowedOrigins);
+//        // Thêm danh sách các domain vào đây
+//        List<String> allowedOrigins = Arrays.asList(
+//        		frontendAll,
+//        		frontendDevDomain, 
+//        		frontendProdDomain,
+//        		frontendTest1,
+//        		frontendTest2);
+//        config.setAllowedOrigins(allowedOrigins);
         
-//        config.addAllowedOrigin(frontendDomain); // Thay đổi địa chỉ frontend của bạn tại đây
+        config.addAllowedOrigin("*"); // Thay đổi địa chỉ frontend của bạn tại đây
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");
         source.registerCorsConfiguration("/**", config);
