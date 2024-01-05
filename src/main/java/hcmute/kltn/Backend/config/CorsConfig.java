@@ -24,6 +24,9 @@ public class CorsConfig {
 	@Value("${frontend.test2}")
     private String frontendTest2;
 	
+	@Value("${frontend.all}")
+    private String frontendAll;
+	
 	@Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -31,6 +34,7 @@ public class CorsConfig {
         
         // Thêm danh sách các domain vào đây
         List<String> allowedOrigins = Arrays.asList(
+        		frontendAll,
         		frontendDevDomain, 
         		frontendProdDomain,
         		frontendTest1,
