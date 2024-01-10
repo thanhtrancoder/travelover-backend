@@ -35,7 +35,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@CrossOrigin(origins = "http://travelover-api.up.railway.app")
 @RestController
 @RequestMapping(path = "/api/v1/accounts")
 @Tag(
@@ -52,6 +51,7 @@ public class AccountController {
 	@Autowired
 	private IResponseObjectService iResponseObjectService;
 	
+	@CrossOrigin(origins = "http://travelover-api.up.railway.app")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@Operation(summary = "Login Account")
 	ResponseEntity<ResponseObject> login(@RequestBody AuthRequest request) {
