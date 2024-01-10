@@ -35,6 +35,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
+@CrossOrigin(origins = "http://travelover-api.up.railway.app")
 @RestController
 @RequestMapping(path = "/api/v1/accounts")
 @Tag(
@@ -45,7 +46,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 				url = "https://drive.google.com/file/d/1XJgZ6J5RRIIl2k17FIpC890iZYTD6mGk/view?usp=sharing")
 		)
 @SecurityRequirement(name = "Bearer Authentication")
-@CrossOrigin
 public class AccountController {
 	@Autowired
 	private IAccountService iAccountService;
