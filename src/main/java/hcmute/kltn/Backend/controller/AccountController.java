@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,6 +45,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 				url = "https://drive.google.com/file/d/1XJgZ6J5RRIIl2k17FIpC890iZYTD6mGk/view?usp=sharing")
 		)
 @SecurityRequirement(name = "Bearer Authentication")
+@CrossOrigin
 public class AccountController {
 	@Autowired
 	private IAccountService iAccountService;
