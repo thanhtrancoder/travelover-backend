@@ -39,7 +39,7 @@ public class CorsConfig {
 //        		frontendTest1,
 //        		frontendTest2);
 //        config.setAllowedOrigins(allowedOrigins);
-        
+        config.setAllowCredentials(true);
         config.addAllowedOrigin("*"); // Thay đổi địa chỉ frontend của bạn tại đây
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");
