@@ -650,11 +650,16 @@ public class OrderService implements IOrderService{
 		// check cancel status
 		if (orderStatus.equals("canceled")) {
 			// refund
-			VNPayRefund VNPayRefund = new VNPayRefund();
-			VNPayRefund.setVnPaymentId(order.getPayment().get(0).getVnPaymentId());
-			VNPayRefund.setOrderInfo("Hoàn tiền cho đơn hàng bị hủy: " + orderStatusUpdate.getMessage());
-			VNPayRefund.setCreateBy(account.getAccountId());
-			iVNPayService.refundPayment(VNPayRefund, "127.0.0.0");
+			try {
+				VNPayRefund VNPayRefund = new VNPayRefund();
+				VNPayRefund.setVnPaymentId(order.getPayment().get(0).getVnPaymentId());
+				VNPayRefund.setOrderInfo("Hoàn tiền cho đơn hàng bị hủy: " + orderStatusUpdate.getMessage());
+				VNPayRefund.setCreateBy(account.getAccountId());
+				iVNPayService.refundPayment(VNPayRefund, "127.0.0.0");
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
 			
 			// send mail
 			AccountDTO accountSendMail = new AccountDTO();

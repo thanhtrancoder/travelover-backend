@@ -34,7 +34,6 @@ public class CorsConfig {
         
 //        // Thêm danh sách các domain vào đây
 //        List<String> allowedOrigins = Arrays.asList(
-//        		frontendAll,
 //        		frontendDevDomain, 
 //        		frontendProdDomain,
 //        		frontendTest1,
