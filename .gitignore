@@ -39,3 +39,5 @@ src/main/resources/static/images/*
 ### Image folder
 src/main/resources/static/videos/*
 !src/main/resources/static/videos/README.md
+
+src/main/resources/application.properties
